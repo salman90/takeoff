@@ -1,13 +1,26 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
+import { Provider } from 'react-redux';
+import { Route, Switch, BrowserRouter } from 'react-router-dom';
+import configureStore from './store';
 import reportWebVitals from './reportWebVitals';
+import FlightsContainer from './containers/FlightsContainer';
+import UserContainer from './containers/UserContainer';
+
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+    <Provider store={configureStore()}>
+      <BrowserRouter>
+        <Switch>
+          <Route exact path="/user" component={UserContainer} >
+          </Route>
+          <Route exact path="/" component={FlightsContainer} >
+          </Route>
+        </Switch>
+      </BrowserRouter>
+    </Provider>
+  ,
   document.getElementById('root')
 );
 
