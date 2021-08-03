@@ -1,7 +1,8 @@
 import React, { PureComponent } from 'react';
+import { Container, Row,  Col} from 'react-bootstrap';
 import styles from './Flights.module.css'
-// './App.module.scss';
-
+import SignUp from '../SignUp';
+import Navigation from '../Navigation';
 /**
  * Class flights render flights page with the information needed 
  */
@@ -9,7 +10,7 @@ class Flights extends PureComponent {
     constructor(props){
         super(props)
         this.state = {
-            title: "",
+            title: "salman",
         }
     }
 
@@ -34,26 +35,25 @@ class Flights extends PureComponent {
     
         this.props.submitExample(this.state.title);
     }
-
     render() {
         return(
-            <div className={styles["container"]}>
-                <div>
-                    <input onChange={this.updateTitle} type="text" value={this.state.title} />
-                    <button onClick={this.example}>
-                        Click Here
-                    </button>
-                </div>
-                <div>
-                    {
-                        this.props.showTitle ?
-                            <h3> {this.props.title} </h3>
+            <Container fluid>
+                <Row>
+                    <Navigation   
+                        renderSignupUser={this.props.renderSignupUser}
+                    />
+                </Row>
+                {
+                    this.props.showSignUp ?
+                        <SignUp 
+                            showSignUp={this.props.showSignUp}
+                            renderSignupUser={this.props.renderSignupUser}
+                        />
+                        :
+                        null
 
-                            :
-                            null
-                    }
-                </div>
-            </div>
+                }
+            </Container>
         )
     }
 }
