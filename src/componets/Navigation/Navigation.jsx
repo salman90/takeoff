@@ -1,8 +1,6 @@
 import React, { PureComponent } from 'react';
 import {
     Container, 
-    Row, 
-    Col, 
     Navbar, 
     Nav, 
 } from 'react-bootstrap';
@@ -10,6 +8,12 @@ import { Link } from 'react-router-dom';
 
 
 class Navigation extends PureComponent {
+
+    renderSignupUser = (event) => {
+        event.preventDefault();
+        this.props.renderSignupUser();
+    }
+
     render(){
         return(
             <Navbar bg="light" expand="lg">
@@ -24,6 +28,9 @@ class Navigation extends PureComponent {
                               <Link to="/" className="nav-link">
                                 Flights
                              </Link>
+                             <Link onClick={this.renderSignupUser}to="#" className="nav-link">
+                                sign Up
+                            </Link>
                         </Nav>
                     </Navbar.Collapse>
                  </Container>
