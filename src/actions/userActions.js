@@ -5,3 +5,13 @@ export const renderSignupUser = () => {
         type: RENDER_SIGNUP
     })
 }
+
+
+
+
+
+export function createUser(firstName, lastName, email, password, passwordConfirmation){
+    return async (dispatch) => {
+        console.log(firstName, lastName, email, password, passwordConfirmation)
+    }
+} 
