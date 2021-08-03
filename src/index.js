@@ -7,6 +7,7 @@ import configureStore from './store';
 import reportWebVitals from './reportWebVitals';
 import FlightsContainer from './containers/FlightsContainer';
 import UserContainer from './containers/UserContainer';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 ReactDOM.render(

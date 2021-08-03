@@ -4,7 +4,9 @@ import { connect } from 'react-redux';
 import {
     submitExample
 } from '../actions/flightActions'
-
+import {
+    renderSignupUser,
+} from '../actions/userActions'
 /**
  * container class holds all the state & actions to data related to flightsconstainer class holds all the state & actions to data related to flights
  */
@@ -25,6 +27,7 @@ class FlightsContainer extends PureComponent {
 const mapStateToProps = (state) => ({
     title: state.flight.get('title'),
     showTitle: state.flight.get('showTitle'),
+    showSignUp: state.user.get('showSignUp'),
 })
 
 /**
@@ -35,6 +38,9 @@ const mapStateToProps = (state) => ({
 const mapDispatchToProps = (dispatch) => ({
     submitExample: (title) => {
         dispatch(submitExample(title));
+    },
+    renderSignupUser: () => {
+        dispatch(renderSignupUser());
     }
 })
 
