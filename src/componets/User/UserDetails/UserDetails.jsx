@@ -1,12 +1,16 @@
 import React, { PureComponent } from 'react';
+import { Container, Row, Col } from 'react-bootstrap';
+import Navigation from '../../Navigation';
 
 
 class UserDetails extends PureComponent {
     render(){
         return (
-            <div>
-                User Details
-            </div>
+            <Container fluid>
+                <Row>
+                    <Navigation />
+                </Row>
+            </Container>
         )
     }
 }

@@ -1,7 +1,8 @@
 import React, { PureComponent } from 'react';
+import { Container, Row,  Col} from 'react-bootstrap';
 import styles from './Flights.module.css'
-// './App.module.scss';
 
+import Navigation from '../Navigation';
 /**
  * Class flights render flights page with the information needed 
  */
@@ -37,23 +38,11 @@ class Flights extends PureComponent {
 
     render() {
         return(
-            <div className={styles["container"]}>
-                <div>
-                    <input onChange={this.updateTitle} type="text" value={this.state.title} />
-                    <button onClick={this.example}>
-                        Click Here
-                    </button>
-                </div>
-                <div>
-                    {
-                        this.props.showTitle ?
-                            <h3> {this.props.title} </h3>
-
-                            :
-                            null
-                    }
-                </div>
-            </div>
+            <Container fluid>
+                <Row>
+                    <Navigation />
+                </Row>
+            </Container>
         )
     }
 }
