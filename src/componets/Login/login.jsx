@@ -59,7 +59,7 @@ class Login extends PureComponent {
                         </Form.Group>
                         <Form.Group className="mb-3" controlId="formBasicEmail">
                             <Form.Label>Password</Form.Label>
-                            <Form.Control type="password" onChange={this.passwordChange} placeholder="Enter email" />
+                            <Form.Control type="password" onChange={this.passwordChange} placeholder="Enter Password" />
                             <Form.Text className="text-muted">
                             </Form.Text>
                         </Form.Group>
@@ -67,7 +67,8 @@ class Login extends PureComponent {
                     
                 </Modal.Body>
                 <Modal.Footer>
-                    <Button variant="primary" onClick={this.gatherData}>Login</Button>
+                    <Button variant="primary" onClick={()=> {this.gatherData();
+                    this.hideLogin()}}>Login</Button>
                 </Modal.Footer>
             </Modal>
         )
