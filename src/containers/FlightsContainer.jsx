@@ -49,7 +49,11 @@ const mapDispatchToProps = (dispatch) => ({
     },
     loginUser: (email, password) => {
         dispatch(loginUser(email, password));
-    }
+    },
+
+    // fligthsInput: (maxPrice, passport,startDate, endDate) => {
+    //     dispatch(fligthsInput(maxPrice, passport,startDate, endDate));
+    // }
 
 })
 

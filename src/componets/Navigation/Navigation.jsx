@@ -19,6 +19,12 @@ class Navigation extends PureComponent {
         this.props.renderLogin();
         }
 
+    renderFlightsInput = (event) => {
+        event.preventDefault();
+        // this.props.renderFlightsInput();
+        console.log("clicked on flights")
+    }
+
     render(){
         return(
             <Navbar bg="light" expand="lg">
@@ -30,7 +36,7 @@ class Navigation extends PureComponent {
                             <Link to="/user" className="nav-link">
                                 Profile
                              </Link>
-                              <Link to="/" className="nav-link">
+                              <Link to="/" onClick={this.renderFlightsInput} className="nav-link">
                                 Flights
                              </Link>
                              <Link onClick={this.renderSignupUser}to="#" className="nav-link">
