@@ -1,11 +1,6 @@
 import React, { PureComponent } from 'react';
-import { Modal, Button, Form, Dropdown, InputGroup, FormControl } from 'react-bootstrap';
+import { Button, Form, InputGroup, FormControl } from 'react-bootstrap';
 import Date from '../DatePicker';
-
-
-
-
-
 
 //a class to handle the user's flights search in put parameters.
 class FligthsInput extends PureComponent {
@@ -13,18 +8,18 @@ class FligthsInput extends PureComponent {
     constructor(props) {
         super(props)
         this.state = {
-            maxPrice: 0,
+            maxPrice: 500,
             passport: "",
             startDate: "",
             endDate: "",
             currentCity: "",
         }
+        // this.initialState = this.state
     }
+
 
     // this bit needs to have auto-completed added to it.
     passport = (e) => {
-        console.log("passport change")
-        console.log(e.target.value)
         this.setState({
             passport: e.target.value,
         })
@@ -43,8 +38,9 @@ class FligthsInput extends PureComponent {
     }
 
     startDate = (e) => {
+        console.log("hi")
         this.setState({
-            startDate: e.target.value,
+            startDate: e.target.value.toDate(),
         })
     }
     endDate = (e) => {
@@ -54,37 +50,41 @@ class FligthsInput extends PureComponent {
     }
 
     gatherData = (e) => {
-        console.log("gatherdata")
-        console.log(this.props)
-        console.log(this.state)
         this.props.flightSearch(this.state.maxPrice, this.state.passport, this.state.startDate, this.state.endDate, this.state.currentCity);
+        this.setState({
+            maxPrice: "",
+            passport: "",
+            startDate: "",
+            endDate: "",
+            currentCity: "",
+        })
     }
+
     render() {
         // const blogs = ["Iran", "Dubai"]
-
-        console.log("I AM HERE!")
         return (<>
             <h2>Let's find you a flight!</h2>
             <Form>
                 <Form.Group className="mb-3" controlId="formBasicEmail">
                     <Form.Label>Passport</Form.Label>
-                    <Form.Control type="text" onChange={this.passport} placeholder="Passport" />
+                    <Form.Control type="text" onChange={this.passport} placeholder="Passport" value={this.state.passport} />
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="formBasicPassword">
                     <Form.Label>Current City</Form.Label>
-                    <Form.Control type="text" onChange={this.currentCity} placeholder="City of Origin" />
+                    <Form.Control type="text" onChange={this.currentCity} placeholder="City of Origin" value={this.state.currentCity} />
                 </Form.Group>
                 <Form.Label>Budget</Form.Label>
                 <InputGroup className="mb-3">
                     <InputGroup.Text>$</InputGroup.Text>
-                    <FormControl aria-label="Amount (to the nearest dollar)" onChange={this.maxPrice} placeholder="Max Budget" />
+                    <FormControl aria-label="Amount (to the nearest dollar)" onChange={this.maxPrice} placeholder="Max Budget" value={this.state.maxPrice} />
                 </InputGroup>
                 <Form.Group className="mb-3" controlId="formBasicCheckbox">
                     <Form.Check type="checkbox" label="Check me out" />
                 </Form.Group>
+                <Form.Label>Earliest Departure Date</Form.Label>
+                <Date onChange={this.startDate} value={this.state.startDate} />
                 <Button variant="primary" onClick={() => { this.gatherData() }}>Submit</Button>
             </Form>
-            <Date/>
 
 
         </>)
@@ -96,7 +96,7 @@ export default FligthsInput;
 
 
 
-{/* <div className="dropdown">
+/* <div className="dropdown">
 <Dropdown>
     <Dropdown.Toggle
         variant="secondary btn-sm"
@@ -113,7 +113,22 @@ export default FligthsInput;
                 {console.log(this.props)}
             </div>
 
-        ))} */}
+        ))} */
 //     </Dropdown.Menu>
 // </Dropdown>
 // </div> */}
+    // clearFields = (e) => {
+    //     // this.setState(this.initialState)
+    //     // console.log("it should clear")
+    //     // console.log(this.state.currentCity)
+    //     // // this.state.value = "";
+    //     // // e.target.reset();
+    //     // // this.setState(()=> this.state)
+    //     this.setState({
+    //         maxPrice: "",
+    //         passport: "",
+    //         startDate: "",
+    //         endDate: "",
+    //         currentCity: "",
+    //     })
+    // }
