@@ -70,7 +70,7 @@ class Flights extends PureComponent {
                     }
                 </Row>
                 <Row>
-                    <FligthsInput
+                    <FligthsInput flightSearch={this.props.flightSearch}
                     />
                 </Row>
             </Container>

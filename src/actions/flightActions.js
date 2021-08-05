@@ -1,5 +1,5 @@
 import {
-    EXAMPLE_TO_SUBMIT,
+    EXAMPLE_TO_SUBMIT, FLIGHT_SEARCH,
 } from '../constants/appConstants';
 
 /**
@@ -7,9 +7,9 @@ import {
  * @param {String} title 
  * @returns payload and type that will be passed in reducer
  */
-export const submitExample = (maxPrice, passport, startDate) => {
+export const flightSearch = (maxPrice, passport, startDate, endDate, currentCity) => {
     return ({
-        type: EXAMPLE_TO_SUBMIT,
+        type: FLIGHT_SEARCH,
         payload: {
             maxPrice: maxPrice,
             passport: passport,

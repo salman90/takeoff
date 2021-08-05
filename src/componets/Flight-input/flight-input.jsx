@@ -49,10 +49,10 @@ class FligthsInput extends PureComponent {
         })
     }
 
-    // gatherData = (e) => {
-    //     console.log("gatherdata")
-    //     this.props.loginUser(this.state.emailChange, this.state.passwordChange);
-    // }
+    gatherData = (e) => {
+        console.log("gatherdata")
+        this.props.flightSearch(this.state.maxPrice, this.state.passport, this.state.startDate, this.state.endDate, this.state.currentCity);
+    }
     render() {
         const blogs = ["Iran", "Dubai"]
 
@@ -63,7 +63,6 @@ class FligthsInput extends PureComponent {
                     <Form.Label>Passport</Form.Label>
                     <Form.Control size="sm" type="text" onChange={this.passport} placeholder="Passport" />
                 </Form.Group>
-
                 <Form.Group className="mb-3" controlId="formBasicPassword">
                     <Form.Label>Password</Form.Label>
                     <Form.Control type="password" placeholder="Password" />
@@ -71,7 +70,7 @@ class FligthsInput extends PureComponent {
                 <Form.Group className="mb-3" controlId="formBasicCheckbox">
                     <Form.Check type="checkbox" label="Check me out" />
                 </Form.Group>
-                {/* <Button variant="primary" onClick={()=> {this.gatherData()}}>Submit</Button> */}
+                <Button variant="primary" onClick={()=> {this.gatherData()}}>Submit</Button>
             </Form>
             <div className="dropdown">
                 <Dropdown>
@@ -87,7 +86,7 @@ class FligthsInput extends PureComponent {
                         {blogs.map((blog) => (
                             <div className="blog-preview" key={blog.id}>
                                 <Dropdown.Item href="#">{blog}</Dropdown.Item>
-                                {console.log()}
+                                {console.log(this.props)}
                             </div>
 
                         ))}
