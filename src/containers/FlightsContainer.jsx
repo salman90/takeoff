@@ -6,6 +6,7 @@ import {
 } from '../actions/flightActions'
 import {
     renderSignupUser,
+    createUser,
 } from '../actions/userActions'
 /**
  * container class holds all the state & actions to data related to flightsconstainer class holds all the state & actions to data related to flights
@@ -41,6 +42,9 @@ const mapDispatchToProps = (dispatch) => ({
     },
     renderSignupUser: () => {
         dispatch(renderSignupUser());
+    },
+    createUser: (firstName, lastName, email, password, passwordConfirmation) => {
+        dispatch(createUser(firstName, lastName, email, password, passwordConfirmation));
     }
 })
 

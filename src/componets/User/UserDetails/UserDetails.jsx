@@ -17,6 +17,7 @@ class UserDetails extends PureComponent {
                         <SignUp
                            showSignUp={this.props.showSignUp} 
                            renderSignupUser={this.props.renderSignupUser}
+                            createUser={this.props.createUser}
                         />
                     :
                     null

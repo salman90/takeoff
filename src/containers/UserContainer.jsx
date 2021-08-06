@@ -3,7 +3,8 @@ import { connect } from 'react-redux';
 import UserDetails from '../componets/User/UserDetails';
 import {
     renderSignupUser,
-} from '../actions/userActions'
+    createUser,
+} from '../actions/userActions';
 /**
  * user Container holds all  the state & actions to data related to flightsconstainer class holds all the state & actions to data related to user
  */
@@ -24,6 +25,9 @@ const mapStateToProps = (state) => ({
 const mapDispatchToProps = (dispatch) => ({
     renderSignupUser: () => {
         dispatch(renderSignupUser());
+    },
+    createUser: (firstName, lastName, email, password, passwordConfirmation) => {
+        dispatch(createUser(firstName, lastName, email, password, passwordConfirmation));
     }
 })
 
