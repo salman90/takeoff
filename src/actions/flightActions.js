@@ -1,5 +1,5 @@
 import {
-    EXAMPLE_TO_SUBMIT, FLIGHT_SEARCH,
+ FLIGHT_SEARCH, UPDATE_START_DATE,
 } from '../constants/appConstants';
 
 /**
@@ -17,4 +17,14 @@ export const flightSearch = (maxPrice, passport, startDate, endDate, currentCity
             endDate: endDate,
             currentCity: currentCity,
         }    })
+}
+
+
+export const updateDate = () => {
+    return({
+        type: UPDATE_START_DATE,
+
+
+    }
+    )
 }

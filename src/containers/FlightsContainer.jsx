@@ -2,10 +2,10 @@ import React,  {PureComponent }  from 'react';
 import Flights from '../componets/Flights';
 import { connect } from 'react-redux';
 import {
-    flightSearch
+    flightSearch, updateDate
 } from '../actions/flightActions'
 import {
-    renderSignupUser, renderLogin, loginUser
+    renderSignupUser, renderLogin, loginUser,
 } from '../actions/userActions'
 
 /**
@@ -53,7 +53,11 @@ const mapDispatchToProps = (dispatch) => ({
 
     flightSearch: (maxPrice, passport,startDate, endDate, currentCity) => {
         dispatch(flightSearch(maxPrice, passport,startDate, endDate, currentCity));
+    },
+    updateDate: () => {
+        dispatch(updateDate());
     }
+
 
 })
 

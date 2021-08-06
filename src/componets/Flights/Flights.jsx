@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
-import styles from './Flights.module.css'
+// import styles from './Flights.module.css'
 import SignUp from '../SignUp';
 import Login from '../Login';
 import Navigation from '../Navigation';

@@ -1,6 +1,7 @@
 import React, { PureComponent } from 'react';
 import { Button, Form, InputGroup, FormControl } from 'react-bootstrap';
-import Date from '../DatePicker';
+import Calendar from '../DatePicker';
+import MyApp from '../DatePicker';
 
 //a class to handle the user's flights search in put parameters.
 class FligthsInput extends PureComponent {
@@ -38,9 +39,9 @@ class FligthsInput extends PureComponent {
     }
 
     startDate = (e) => {
-        console.log("hi")
+        console.log("e.target.value")
         this.setState({
-            startDate: e.target.value.toDate(),
+            startDate: e.target.value,
         })
     }
     endDate = (e) => {
@@ -50,6 +51,7 @@ class FligthsInput extends PureComponent {
     }
 
     gatherData = (e) => {
+        console.log(this.state)
         this.props.flightSearch(this.state.maxPrice, this.state.passport, this.state.startDate, this.state.endDate, this.state.currentCity);
         this.setState({
             maxPrice: "",
@@ -82,7 +84,7 @@ class FligthsInput extends PureComponent {
                     <Form.Check type="checkbox" label="Check me out" />
                 </Form.Group>
                 <Form.Label>Earliest Departure Date</Form.Label>
-                <Date onChange={this.startDate} value={this.state.startDate} />
+                <Calendar startDate={this.props.startDate} onChange={(value) => console.log(value)} onClose={this.startDate} returnValue={"start"} value={this.startDate} />
                 <Button variant="primary" onClick={() => { this.gatherData() }}>Submit</Button>
             </Form>
 
