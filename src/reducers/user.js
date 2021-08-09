@@ -1,8 +1,9 @@
 import Immutable from 'immutable';
-import { RENDER_SIGNUP } from '../constants/appConstants';
+import { RENDER_SIGNUP, RENDER_LOGIN } from '../constants/appConstants';
  
 const initialState = Immutable.fromJS({
     showSignUp: false,
+    showLogin: false,
 })
 
 
@@ -19,6 +20,8 @@ export default (state = initialState, action = {}) => {
         case RENDER_SIGNUP:
             return state
                     .set("showSignUp", !state.get("showSignUp"))
+        case RENDER_LOGIN:
+            return state.set("showLogin", !state.get("showLogin"))
         default:
             return state;
     }

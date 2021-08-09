@@ -14,6 +14,11 @@ class Navigation extends PureComponent {
         this.props.renderSignupUser();
     }
 
+    renderLogin = (event) => {
+        event.preventDefault();
+        this.props.renderLogin();
+        }
+
     render(){
         return(
             <Navbar bg="light" expand="lg">
@@ -30,6 +35,9 @@ class Navigation extends PureComponent {
                              </Link>
                              <Link onClick={this.renderSignupUser}to="#" className="nav-link">
                                 sign Up
+                            </Link>
+                            <Link onClick={this.renderLogin} to="#" className="nav-link">
+                                Login
                             </Link>
                         </Nav>
                     </Navbar.Collapse>

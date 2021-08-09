@@ -1,6 +1,6 @@
 import Immutable from 'immutable';
 import {
-    EXAMPLE_TO_SUBMIT
+    EXAMPLE_TO_SUBMIT, RENDER_LOGIN
 } from '../constants/appConstants';
 
 const initialState = Immutable.fromJS({
@@ -20,8 +20,10 @@ export default (state = initialState, action = {}) => {
     switch (action.type) {
         case EXAMPLE_TO_SUBMIT:
             return state
-                        .set('title', action.payload)
-                        .set('showTitle', true)
+                .set('title', action.payload)
+                .set('showTitle', true)
+        case RENDER_LOGIN:
+            return state.set("showLogin", !state.get("showLogin"))
         default:
             return state;
     }

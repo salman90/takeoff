@@ -5,9 +5,9 @@ import {
     submitExample
 } from '../actions/flightActions'
 import {
-    renderSignupUser,
-    createUser,
+    renderSignupUser, renderLogin, loginUser
 } from '../actions/userActions'
+
 /**
  * container class holds all the state & actions to data related to flightsconstainer class holds all the state & actions to data related to flights
  */
@@ -29,6 +29,7 @@ const mapStateToProps = (state) => ({
     title: state.flight.get('title'),
     showTitle: state.flight.get('showTitle'),
     showSignUp: state.user.get('showSignUp'),
+    showLogin: state.user.get("showLogin"),
 })
 
 /**
@@ -43,9 +44,15 @@ const mapDispatchToProps = (dispatch) => ({
     renderSignupUser: () => {
         dispatch(renderSignupUser());
     },
+    renderLogin: () => {
+        dispatch(renderLogin());
+    },
+    loginUser: (email, password) => {
+        dispatch(loginUser(email, password));
     createUser: (firstName, lastName, email, password, passwordConfirmation) => {
         dispatch(createUser(firstName, lastName, email, password, passwordConfirmation));
     }
+
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(FlightsContainer);

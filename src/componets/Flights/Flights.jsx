@@ -2,6 +2,7 @@ import React, { PureComponent } from 'react';
 import { Container, Row,  Col} from 'react-bootstrap';
 import styles from './Flights.module.css'
 import SignUp from '../SignUp';
+import Login from '../Login';
 import Navigation from '../Navigation';
 /**
  * Class flights render flights page with the information needed 
@@ -36,11 +37,13 @@ class Flights extends PureComponent {
         this.props.submitExample(this.state.title);
     }
     render() {
+        // console.log(this.props)
         return(
             <Container fluid>
                 <Row>
                     <Navigation   
                         renderSignupUser={this.props.renderSignupUser}
+                        renderLogin={this.props.renderLogin}
                     />
                 </Row>
                 {
@@ -54,6 +57,18 @@ class Flights extends PureComponent {
                         null
 
                 }
+                <Row>
+                {this.props.showLogin?
+                <Login 
+                    showLogin={this.props.showLogin}
+                    renderLogin={this.props.renderLogin}
+                    loginUser={this.props.loginUser}
+                 />
+                :
+                null
+                
+            }
+            </Row>
             </Container>
         )
     }
