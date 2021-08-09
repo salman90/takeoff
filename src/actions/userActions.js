@@ -24,3 +24,12 @@ export const loginUser = (email, password) => {
         }
     })
 }
+
+
+
+
+export function createUser(firstName, lastName, email, password, passwordConfirmation){
+    return async (dispatch) => {
+        console.log(firstName, lastName, email, password, passwordConfirmation)
+    }
+} 

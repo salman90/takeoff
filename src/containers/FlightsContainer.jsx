@@ -49,6 +49,8 @@ const mapDispatchToProps = (dispatch) => ({
     },
     loginUser: (email, password) => {
         dispatch(loginUser(email, password));
+    createUser: (firstName, lastName, email, password, passwordConfirmation) => {
+        dispatch(createUser(firstName, lastName, email, password, passwordConfirmation));
     }
 
 })
