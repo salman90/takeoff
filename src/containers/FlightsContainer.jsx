@@ -5,7 +5,7 @@ import {
     submitExample
 } from '../actions/flightActions'
 import {
-    renderSignupUser, renderLogin, loginUser
+    renderSignupUser, renderLogin, loginUser, createUser
 } from '../actions/userActions'
 
 /**
@@ -49,6 +49,7 @@ const mapDispatchToProps = (dispatch) => ({
     },
     loginUser: (email, password) => {
         dispatch(loginUser(email, password));
+    },
     createUser: (firstName, lastName, email, password, passwordConfirmation) => {
         dispatch(createUser(firstName, lastName, email, password, passwordConfirmation));
     }

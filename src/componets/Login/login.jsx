@@ -23,19 +23,17 @@ class Login extends PureComponent {
     }
 
     passwordChange = (e) => {
+
         this.setState({
             passwordChange : e.target.value,
         })
     }
 
     gatherData = (e) => {
-        console.log("gatherdata")
         this.props.loginUser(this.state.emailChange, this.state.passwordChange);
     }
 
     render(){
-        console.log(this.props)
-        console.log(this.state)
         return(
             <Modal
                 size="md"
@@ -67,8 +65,13 @@ class Login extends PureComponent {
                     
                 </Modal.Body>
                 <Modal.Footer>
-                    <Button variant="primary" onClick={()=> {this.gatherData();
-                    this.hideLogin()}}>Login</Button>
+                    <Button variant="primary" 
+                        onClick={()=> {
+                        this.gatherData();
+                        this.hideLogin()}
+                        }>
+                        Login
+                    </Button>
                 </Modal.Footer>
             </Modal>
         )

@@ -2,8 +2,8 @@ import React, { PureComponent } from 'react';
 import { connect } from 'react-redux';
 import UserDetails from '../componets/User/UserDetails';
 import {
-
-    renderSignupUser, 
+    createUser,
+renderSignupUser, 
   renderLogin, 
   loginUser
 } from '../actions/userActions'
@@ -13,7 +13,6 @@ import {
  */
 class UserContainer extends PureComponent {
     render(){
-        console.log(this.props)
         return (
             <div>
                 <UserDetails {...this.props}/>
@@ -36,6 +35,7 @@ const mapDispatchToProps = (dispatch) => ({
     },
     loginUser: (email, password) => {
         dispatch(loginUser(email, password))
+    },
     createUser: (firstName, lastName, email, password, passwordConfirmation) => {
         dispatch(createUser(firstName, lastName, email, password, passwordConfirmation));
     }
