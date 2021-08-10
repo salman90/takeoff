@@ -17,8 +17,6 @@ class Calendar extends PureComponent {
   }
 
   setStartDate = (date) => {
-    console.log(date)
-    console.log(typeof(date))
     this.setState({
       startDate: date,
     })
@@ -29,9 +27,10 @@ class Calendar extends PureComponent {
   }
 
   render() {
+    console.log(this.state.startDate)
     return (
       <div>
-        <DatePicker value={new Date()} onChange={(date) => this.setStartDate(date)} onClose={this.updateDate}></DatePicker>
+        <DatePicker onChange={(date) => this.setStartDate(date)}></DatePicker>
 
       </div>
     )
