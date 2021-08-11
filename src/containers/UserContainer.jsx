@@ -24,6 +24,7 @@ class UserContainer extends PureComponent {
 const mapStateToProps = (state) => ({
     showSignUp: state.user.get('showSignUp'),
     showLogin: state.user.get("showLogin"),
+    message: state.user.get("message")
 })
 
 const mapDispatchToProps = (dispatch) => ({

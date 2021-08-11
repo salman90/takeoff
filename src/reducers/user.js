@@ -1,9 +1,11 @@
 import Immutable from 'immutable';
-import { RENDER_SIGNUP, RENDER_LOGIN } from '../constants/appConstants';
+import { RENDER_SIGNUP, RENDER_LOGIN, CREATE_USER_SUCUCCESSFUL } from '../constants/appConstants';
  
 const initialState = Immutable.fromJS({
     showSignUp: false,
     showLogin: false,
+    message: "",
+
 })
 
 
@@ -22,6 +24,8 @@ export default (state = initialState, action = {}) => {
                     .set("showSignUp", !state.get("showSignUp"))
         case RENDER_LOGIN:
             return state.set("showLogin", !state.get("showLogin"))
+        case CREATE_USER_SUCUCCESSFUL:
+            return state.set("message", action.payload.message )
         default:
             return state;
     }

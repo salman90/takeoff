@@ -30,6 +30,7 @@ const mapStateToProps = (state) => ({
     showTitle: state.flight.get('showTitle'),
     showSignUp: state.user.get('showSignUp'),
     showLogin: state.user.get("showLogin"),
+    message: state.user.get("message")
 })
 
 /**

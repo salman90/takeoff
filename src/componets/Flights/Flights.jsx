@@ -37,7 +37,7 @@ class Flights extends PureComponent {
         this.props.submitExample(this.state.title);
     }
     render() {
-        // console.log(this.props)
+        console.log(this.props)
         return(
             <Container fluid>
                 <Row>
