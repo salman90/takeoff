@@ -47,7 +47,7 @@ export function createUser(firstName, lastName, email, password, passwordConfirm
         })
         if(response.status === 200){
             let data = response.data;
-            console.log(data)
+            console.log(data, "inside createuser line 50")
             dispatch({type: CREATE_USER_SUCUCCESSFUL, payload: data})
         }else{
 
