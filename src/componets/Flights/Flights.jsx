@@ -5,6 +5,7 @@ import SignUp from '../SignUp';
 import Login from '../Login';
 import Navigation from '../Navigation';
 import FligthsInput from '../Flight-input/flight-input';
+import Joke from '../Joke/joke';
 /**
  * Class flights render flights page with the information needed 
  */
@@ -74,6 +75,9 @@ class Flights extends PureComponent {
             <Row>
                 <FligthsInput 
                 flightSearch={this.props.flightSearch}/>
+            </Row>
+            <Row>
+                <Joke/>
             </Row>
             </Container>
         )

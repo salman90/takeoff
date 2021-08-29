@@ -2,6 +2,7 @@ import React, { PureComponent } from 'react';
 import { Button, Form, InputGroup, FormControl } from 'react-bootstrap';
 // import Calendar from '../DatePicker';
 // import DatePicker from 'react-date-picker'
+import axios from "axios";
 
 
 //a class to handle the user's flights search in put parameters.
@@ -61,6 +62,8 @@ class FligthsInput extends PureComponent {
             currentCity: "",
         })
     }
+
+    
 
     render() {
         return (<>
