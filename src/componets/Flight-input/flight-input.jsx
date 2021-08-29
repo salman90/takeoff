@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react';
 import { Button, Form, InputGroup, FormControl } from 'react-bootstrap';
-import Calendar from '../DatePicker';
-import DatePicker from 'react-date-picker'
+// import Calendar from '../DatePicker';
+// import DatePicker from 'react-date-picker'
 
 
 //a class to handle the user's flights search in put parameters.
@@ -83,7 +83,7 @@ class FligthsInput extends PureComponent {
                     <Form.Check type="checkbox" label="Check me out" />
                 </Form.Group>
                 <Form.Label>Earliest Departure Date</Form.Label>
-                <DatePicker value={new Date} onChange={(value) => this.startDate(value)}/>
+                {/* <DatePicker value={new Date} onChange={(value) => this.startDate(value)}/> */}
                 <Button variant="primary" onClick={() => { this.gatherData() }}>Submit</Button>
             </Form>
 

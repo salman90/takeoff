@@ -4,6 +4,7 @@ import styles from './Flights.module.css'
 import SignUp from '../SignUp';
 import Login from '../Login';
 import Navigation from '../Navigation';
+import FligthsInput from '../Flight-input/flight-input';
 /**
  * Class flights render flights page with the information needed 
  */
@@ -37,7 +38,7 @@ class Flights extends PureComponent {
         this.props.submitExample(this.state.title);
     }
     render() {
-        console.log(this.props)
+        // console.log(this.props)
         return(
             <Container fluid>
                 <Row>
@@ -68,6 +69,11 @@ class Flights extends PureComponent {
                 null
                 
             }
+            </Row>
+
+            <Row>
+                <FligthsInput 
+                flightSearch={this.props.flightSearch}/>
             </Row>
             </Container>
         )

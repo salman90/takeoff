@@ -2,7 +2,7 @@ import React,  {PureComponent }  from 'react';
 import Flights from '../componets/Flights';
 import { connect } from 'react-redux';
 import {
-    submitExample
+    submitExample, flightSearch
 } from '../actions/flightActions'
 import {
     renderSignupUser, renderLogin, loginUser, createUser
@@ -53,6 +53,9 @@ const mapDispatchToProps = (dispatch) => ({
     },
     createUser: (firstName, lastName, email, password, passwordConfirmation) => {
         dispatch(createUser(firstName, lastName, email, password, passwordConfirmation));
+    },
+    flightSearch:(maxPrice, passport, startDate, endDate, currentCity) => {
+        dispatch(flightSearch(maxPrice, passport, startDate, endDate, currentCity));
     }
 
 })
